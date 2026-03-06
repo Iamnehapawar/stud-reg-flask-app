@@ -23,21 +23,33 @@ The goal of this project is to understand:
 Below is the high-level architecture of the application:
 
 ```
-            User (Browser)
+           User (Browser)
+                 │
+                 ▼
+         Frontend (HTML/CSS)
                  │
                  ▼
         Flask Web Application
-           (Python Flask)
+            (Python Flask)
                  │
                  ▼
            MySQL Database
          (Student Records)
-                 │
-                 ▼
-        Jenkins CI/CD Pipeline
-                 │
-                 ▼
-             AWS EC2 Server
+
+------------------------------------
+
+        Developer
+             │
+             ▼
+       GitHub Repository
+             │
+             ▼
+        Jenkins Pipeline
+        (Build & Deploy)
+             │
+             ▼
+          AWS EC2
+      (Flask Application)
 ```
 
 **Workflow Explanation**
@@ -179,8 +191,7 @@ name VARCHAR(100),
 email VARCHAR(100),
 phone VARCHAR(20),
 course VARCHAR(50),
-address VARCHAR(255),
-contact VARCHAR(50)
+address VARCHAR(255)
 );
 ```
 
